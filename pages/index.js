@@ -75,8 +75,12 @@ export default function Home() {
     // Replace this URL with your AWeber or email capture endpoint
     // e.g. AWeber form action URL or a Next.js API route
     try {
-      await new Promise((r) => setTimeout(r, 900)); // simulate submit
-      setSubmitted(true);
+      const response = await fetch("/api/subscribe", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ email }),
+});
+if (!response.ok) throw new Error("Subscribe failed");
     } catch {
       alert("Something went wrong. Please try again.");
     }

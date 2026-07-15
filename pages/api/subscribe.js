@@ -43,7 +43,7 @@ export default async function handler(req, res) {
 
     // Step 3: Add subscriber
     const subRes = await fetch(
-      `https://api.aweber.com/1.0/accounts/${accountId}/lists/awlist6966175/subscribers`,
+      `https://api.aweber.com/1.0/accounts/${accountId}/lists/6966175/subscribers`
       {
         method: "POST",
         headers: {
